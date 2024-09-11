@@ -7,6 +7,10 @@
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
+DROP DATABASE member_manager;
+CREATE DATABASE member_manager;
+USE member_manager;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -63,7 +67,8 @@ INSERT INTO `user_info` (`username`, `name`, `birthday`, `gender`, `location`, `
 CREATE TABLE `user_login` (
   `username` varchar(255) NOT NULL,
   `hashpassword` varchar(255) NOT NULL,
-  `role` int(3) DEFAULT 1
+  `role` int(3) DEFAULT 1,
+  `ban` int(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
